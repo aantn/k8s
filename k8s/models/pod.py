@@ -213,9 +213,11 @@ class PodSpec(Model):
     activeDeadlineSeconds = Field(int)
     dnsPolicy = Field(six.text_type, "ClusterFirst")
     nodeSelector = Field(dict)
+    nodeName = Field(six.text_type)
     selector = Field(dict)
     serviceAccountName = Field(six.text_type, "default")
     automountServiceAccountToken = Field(bool)
+    hostPID = Field(bool)
     imagePullSecrets = ListField(LocalObjectReference)
     initContainers = ListField(Container)
 
