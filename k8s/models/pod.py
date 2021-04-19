@@ -139,6 +139,7 @@ class Capabilities(Model):
 
 class SecurityContext(Model):
     capabilities = Field(Capabilities)
+    privileged = Field(bool)
 
 
 class Container(Model):
