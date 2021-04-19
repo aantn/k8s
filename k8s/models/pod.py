@@ -133,6 +133,14 @@ class Lifecycle(Model):
     preStop = Field(Handler)
 
 
+class Capabilities(Model):
+    add = ListField(six.text_type)
+
+
+class SecurityContext(Model):
+    capabilities = Field(Capabilities)
+
+
 class Container(Model):
     name = Field(six.text_type)
     image = Field(six.text_type)
@@ -147,6 +155,7 @@ class Container(Model):
     imagePullPolicy = Field(six.text_type, "IfNotPresent")
     command = ListField(six.text_type)
     args = ListField(six.text_type)
+    securityContext = Field(SecurityContext)
 
 
 class SecretVolumeSource(Model):
