@@ -138,7 +138,7 @@ class Capabilities(Model):
 
 
 class SecurityContext(Model):
-    privileged_ = Field(bool)
+    privileged = Field(bool)
     capabilities = Field(Capabilities)
 
 
